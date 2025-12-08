@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: Sistema Agendamento
+  flyway:
+    user: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    url: jdbc:postgresql://localhost:5432/sistema-agendamento
+    locations:
+      - classpath:db/migration
+    schemas:
+      - sistema-agendamento
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/sistema-agendamento
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+  jpa:
+    properties:
+      hibernate.format_sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
